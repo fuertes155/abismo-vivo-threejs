@@ -1,0 +1,13 @@
+Coloca aquí tus dos archivos de medios (no se incluyen en el repositorio de código):
+
+1. video.mp4   -> el clip que se proyecta como textura en el "Ojo Abisal".
+2. audio.mp3   -> el sonido ambiente que se reproduce como audio espacial
+                  (ballenas, sonar, corrientes marinas, etc.).
+
+Sugerencia: usa clips cortos (10-20s en loop) y libres de derechos
+(Pixabay, Pexels, Freesound) para no tener problemas de licencia al
+subir el video demo o el repositorio.
+
+Mientras estos dos archivos no existan, la consola del navegador mostrará
+un aviso 404 para ellos, pero el resto de la escena (corales, anémonas,
+partículas, iluminación) funciona igual.

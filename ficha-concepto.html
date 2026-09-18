@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Ficha del Concepto</title>
+<style>
+  @page { size: Letter; margin: 1.3cm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #14202a;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 8px 14px;
+    line-height: 1.3;
+  }
+  h1 {
+    font-size: 1.28rem;
+    margin: 0 0 2px;
+    color: #063a4a;
+    border-bottom: 3px solid #0aa3b5;
+    padding-bottom: 5px;
+  }
+  .meta { font-size: 0.74rem; color: #4a5a63; margin-bottom: 10px; }
+  h2 {
+    font-size: 0.86rem;
+    color: #0aa3b5;
+    margin: 9px 0 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  p { margin: 0 0 5px; font-size: 0.82rem; }
+  ul { margin: 3px 0 5px 18px; padding: 0; font-size: 0.82rem; }
+  li { margin-bottom: 2px; }
+  .signature {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #063a4a;
+  }
+  .tag {
+    display: inline-block;
+    background: #e6fbff;
+    color: #086f7d;
+    border-radius: 4px;
+    padding: 1px 8px;
+    font-size: 0.7rem;
+    margin-right: 6px;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Ficha del Concepto — "Abismo Vivo"</h1>
+  <p class="meta">
+    Taller Práctico: Medios, Animación y Audio Espacial en Three.js &nbsp;·&nbsp;
+    Programación de Entornos Multimedia — Semana 3 &nbsp;·&nbsp; 16/09/2026
+  </p>
+
+  <h2>Concepto creativo</h2>
+  <p>
+    <strong>Abismo Vivo</strong> es un santuario bioluminiscente en el fondo abisal del
+    océano. En el centro flota el <strong>"Ojo Abisal"</strong>, una superficie circular
+    que actúa como ventana viva: proyecta un video en bucle que representa lo que la
+    criatura del abismo observa en las profundidades. A su alrededor crecen formaciones
+    de coral fosforescente, una anémona de tentáculos ondulantes y una nube de plancton
+    que asciende constantemente, todo iluminado por destellos de luz cian y magenta que
+    imitan la bioluminiscencia real de los organismos de gran profundidad.
+  </p>
+  <p>
+    La idea narrativa es transmitir la sensación de encontrar, en medio de la oscuridad
+    total del abismo, un punto de vida y tecnología que "respira" y "escucha" al
+    visitante que se acerca.
+  </p>
+
+  <h2>Animación (bucle a 60 FPS)</h2>
+  <ul>
+    <li>El Ojo Abisal flota y pulsa suavemente (oscilación senoidal en posición y rotación).</li>
+    <li>Tres formaciones de coral (<em>TorusKnotGeometry</em>) rotan de forma continua e independiente.</li>
+    <li>Los tentáculos de la anémona ondulan con desfases individuales para un movimiento orgánico.</li>
+    <li>Un sistema de 500 partículas simula plancton bioluminiscente ascendiendo y reciclándose.</li>
+    <li>La luz puntual del Ojo Abisal varía su intensidad para simular un "latido".</li>
+  </ul>
+
+  <h2>Video como textura 3D</h2>
+  <p>
+    Se usa <em>THREE.VideoTexture</em> aplicada sobre una geometría circular
+    (<em>CircleGeometry</em>) que representa el iris del Ojo Abisal, enmarcada por un
+    anillo emisivo. El video permanece silenciado (su pista de audio no se usa) porque
+    el sonido del entorno proviene del audio espacial independiente.
+  </p>
+
+  <h2>Audio espacial (PositionalAudio)</h2>
+  <p>
+    El sonido ambiental (corrientes/criaturas abisales) está anclado directamente al
+    Ojo Abisal mediante <em>THREE.PositionalAudio</em>, con <em>refDistance</em> y
+    <em>maxDistance</em> ajustados para que el volumen suba al acercarse y se apague
+    al alejarse. El usuario controla la cámara con <em>OrbitControls</em> (arrastrar
+    para orbitar, rueda para acercar/alejar) y puede comprobar el efecto en tiempo real.
+  </p>
+
+  <h2>Interacción del usuario</h2>
+  <p>
+    Un botón en pantalla ("Iniciar/Pausar transmisión") y la tecla <em>Espacio</em>
+    inician o pausan simultáneamente el video y el audio espacial, resolviendo la
+    restricción de autoplay de los navegadores mediante un gesto explícito del usuario
+    que además reanuda el <em>AudioContext</em>.
+  </p>
+
+  <p>
+    <span class="tag">Three.js</span>
+    <span class="tag">VideoTexture</span>
+    <span class="tag">PositionalAudio</span>
+    <span class="tag">OrbitControls</span>
+    <span class="tag">Vite</span>
+  </p>
+
+  <div class="signature">Eval Samuel Molina Fuertes</div>
+
+</body>
+</html>
